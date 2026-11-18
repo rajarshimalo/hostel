@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pathfinder Nest Hostel — Sleep High. Live Wild.</title>
+  <meta name="description" content="A design-led hostel in the Himalayas. Acoustic bunk pods, stone fireplace lounge, prayer flag corridors, and mountain views that stop your breath every single morning." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       TELEMETRY BAR
+  ═══════════════════════════════════════════ -->
+  <div class="telemetry-bar">
+    <div class="telemetry-track">
+      <span class="telemetry-pulse"></span>
+      <span class="telemetry-item">LIVE FROM THE NEST</span>
+      <span class="telemetry-dot">✦</span>
+      <span class="telemetry-item" id="tel-temp">12°C  &nbsp;Himalayan Clear</span>
+      <span class="telemetry-dot">✦</span>
+      <span class="telemetry-item">Tonight: Bonfire &amp; Chai Circle · 8 PM Courtyard</span>
+      <span class="telemetry-dot">✦</span>
+      <span class="telemetry-item">Mountain View Dorms from <strong>₹499 / night</strong></span>
+      <span class="telemetry-dot">✦</span>
+      <span class="telemetry-item">LIVE FROM THE NEST</span>
+      <span class="telemetry-dot">✦</span>
+      <span class="telemetry-item">12°C  &nbsp;Himalayan Clear</span>
+      <span class="telemetry-dot">✦</span>
+      <span class="telemetry-item">Tonight: Bonfire &amp; Chai Circle · 8 PM Courtyard</span>
+      <span class="telemetry-dot">✦</span>
+      <span class="telemetry-item">Mountain View Dorms from <strong>₹499 / night</strong></span>
+      <span class="telemetry-dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-logo" aria-label="Pathfinder Nest Home">
+      <svg class="nav-logo-mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M18 3L3 14v19h10V23h10v10h10V14L18 3z" fill="currentColor"/>
+        <circle cx="18" cy="13" r="3" fill="var(--accent-voltage)"/>
+      </svg>
+      <span class="nav-logo-text">Pathfinder<br><em>Nest</em></span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#sleep" class="nav-link">Sleep</a>
+      <a href="#vibe" class="nav-link">Vibe</a>
+      <a href="#happenings" class="nav-link">Happenings</a>
+      <a href="#neighborhood" class="nav-link">Explore</a>
+      <a href="#about" class="nav-link">The Nest</a>
+    </div>
+
+    <button class="book-pill" id="book-trigger" aria-label="Check Availability">
+      Check Availability <span class="book-pill-mark">✦</span>
+    </button>
+
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">✕</button>
+    <nav class="mobile-nav-links">
+      <a href="#sleep" class="mobile-nav-link">Sleep</a>
+      <a href="#vibe" class="mobile-nav-link">Vibe</a>
+      <a href="#happenings" class="mobile-nav-link">Happenings</a>
+      <a href="#neighborhood" class="mobile-nav-link">Explore</a>
+      <a href="#about" class="mobile-nav-link">The Nest</a>
+      <a href="#booking" class="mobile-nav-link mobile-nav-cta">Check Availability ✦</a>
+    </nav>
+    <div class="mobile-menu-footer">
+      <span class="mono">PATHFINDER NEST HOSTEL</span>
+      <span class="mono" style="opacity:0.5">27°N · 88°E · HIMALAYAS</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-wrap">
+      <img src="pictures/view.jpg" alt="Himalayan mountain view from Pathfinder Nest" class="hero-bg-img" />
+      <div class="hero-bg-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="mono">HOSTEL · DARJEELING, WB</span>
+        <span class="telemetry-pulse"></span>
+        <span class="mono">BOOKINGS OPEN</span>
+      </div>
+
+      <h1 class="hero-headline">
+        <span class="hero-line hero-line--1">Sleep High.</span>
+        <span class="hero-line hero-line--2">Live <em>Wild.</em></span>
+      </h1>
+
+      <p class="hero-subhead">
+        A hostel carved into the soul of the Himalayas.<br>
+        Prayer flags. Stone fireplaces. Art-covered bunks.<br>
+        And a mountain view that earns every ache from the trail.
+      </p>
+
+      <div class="hero-actions">
+        <button class="btn-primary" id="hero-book">
+          Find Your Nest
+        </button>
+        <a href="#vibe" class="btn-ghost">
+          See the vibe ↓
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-cue" aria-hidden="true">
+      <span class="mono">SCROLL</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+
+    <div class="hero-coords" aria-hidden="true">
+      <span class="mono">27°02′N 88°15′E · 2,042 M ELEVATION</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       MANIFESTO RIBBON
+  ═══════════════════════════════════════════ -->
+  <section class="manifesto">
+    <div class="container manifesto-inner">
+      <p class="manifesto-text">
+        <span class="manifesto-serif">Hostel soul.</span>
+        <span class="manifesto-normal">Boutique craft.</span>
+        <span class="manifesto-serif manifesto-italic">Zero pretension.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       STORY / ABOUT INTRO
+  ═══════════════════════════════════════════ -->
+  <section class="story" id="about">
+    <div class="container story-grid">
+      <div class="story-text reveal">
+        <div class="section-label mono">THE NEST</div>
+        <h2 class="story-heading">
+          Not a hotel.<br>
+          Not just a bed.<br>
+          <em>A base camp<br>for the restless.</em>
+        </h2>
+        <p class="body-text">
+          Pathfinder Nest was built for the kind of traveller who carries a dog-eared paperback, loses track of time in conversation, and finds beauty in unplanned moments.
+        </p>
+        <p class="body-text">
+          Tucked into the Himalayan hills, our walls are painted by the guests who slept here. Our kitchen brews real Darjeeling tea. Our fireplace has heard a thousand stories. And our mountain view is never, ever the same twice.
+        </p>
+        <div class="story-stats">
+          <div class="stat">
+            <span class="stat-num">2,042</span>
+            <span class="stat-label mono">METRES ABOVE SEA LEVEL</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">∞</span>
+            <span class="stat-label mono">MOUNTAIN VIEWS INCLUDED</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">1</span>
+            <span class="stat-label mono">RULE: BE DECENT TO EACH OTHER</span>
+          </div>
+        </div>
+      </div>
+      <div class="story-image-stack reveal">
+        <div class="story-img-primary">
+          <img src="pictures/people.png" alt="Travellers outside Pathfinder Nest" loading="lazy" />
+        </div>
+        <div class="story-img-secondary">
+          <img src="pictures/people_2.png" alt="Guests around the dining table" loading="lazy" />
+          <div class="story-img-tag mono">COMMUNITY · ALWAYS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SLEEP — ROOMS
+  ═══════════════════════════════════════════ -->
+  <section class="sleep" id="sleep">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label mono">SLEEP</div>
+        <h2 class="section-heading">
+          Where you rest<br>shapes <em>how you roam.</em>
+        </h2>
+        <p class="section-desc">
+          Every pod is a private world. Every room tells a different story — some painted by the guests who slept in them.
+        </p>
+      </div>
+
+      <!-- Room Toggle -->
+      <div class="room-toggle reveal" role="tablist" aria-label="Room types">
+        <button class="toggle-btn active" role="tab" aria-selected="true" data-filter="all">All Rooms</button>
+        <button class="toggle-btn" role="tab" aria-selected="false" data-filter="dorm">Bunk Pods</button>
+        <button class="toggle-btn" role="tab" aria-selected="false" data-filter="private">Private Sanctuaries</button>
+      </div>
+
+      <!-- Room Cards -->
+      <div class="rooms-grid" id="rooms-grid">
+
+        <article class="room-card reveal" data-type="dorm">
+          <div class="room-card-img">
+            <img src="pictures/dorms.webp" alt="Art-covered bunk pod at Pathfinder Nest" loading="lazy" />
+            <div class="room-card-badge mono">BUNK POD</div>
+          </div>
+          <div class="room-card-body">
+            <div class="room-card-meta mono">6-BED · CO-ED · FROM ₹499/NIGHT</div>
+            <h3 class="room-card-title">The Art Dorm</h3>
+            <p class="room-card-desc">
+              Every inch of this dorm has been painted by travellers who slept here. Your bunk is a private cocoon — heavy blackout drapes, warm reading sconce, in-pod charging. The art on the wall? Leave your own mark.
+            </p>
+            <ul class="room-card-amenities">
+              <li>🛏️ Orthopedic mattress + blackout curtain</li>
+              <li>🔌 Dual USB-C 65W + AC power</li>
+              <li>🔒 70L lockable gear vault</li>
+              <li>🎨 You can paint the wall</li>
+            </ul>
+            <a href="#booking" class="room-card-cta">Book This Pod →</a>
+          </div>
+        </article>
+
+        <article class="room-card reveal" data-type="dorm">
+          <div class="room-card-img">
+            <img src="pictures/deom2.jpg" alt="Bunk room with warm pod lighting" loading="lazy" />
+            <div class="room-card-badge mono">BUNK POD</div>
+          </div>
+          <div class="room-card-body">
+            <div class="room-card-meta mono">4-BED · CO-ED · FROM ₹599/NIGHT</div>
+            <h3 class="room-card-title">The Quiet Pod</h3>
+            <p class="room-card-desc">
+              Smaller. Stiller. Built for the light sleeper, the solo reader, and the early-morning trail runner. Same pod architecture — different frequency.
+            </p>
+            <ul class="room-card-amenities">
+              <li>🛏️ High-density foam + privacy drape</li>
+              <li>📚 In-pod reading nook shelf</li>
+              <li>🔌 Power delivery charging recess</li>
+              <li>🌙 Soft amber warm LED sconce</li>
+            </ul>
+            <a href="#booking" class="room-card-cta">Book This Pod →</a>
+          </div>
+        </article>
+
+        <article class="room-card reveal" data-type="dorm">
+          <div class="room-card-img">
+            <img src="pictures/dorm3.webp" alt="Women's Haven dorm — private curtained bunks" loading="lazy" />
+            <div class="room-card-badge mono">BUNK POD</div>
+            <div class="room-card-badge-secondary mono">ALL-WOMEN</div>
+          </div>
+          <div class="room-card-body">
+            <div class="room-card-meta mono">ALL-WOMEN · 4-BED · FROM ₹649/NIGHT</div>
+            <h3 class="room-card-title">The Women's Haven</h3>
+            <p class="room-card-desc">
+              A dedicated all-women dorm. Same impeccable pod design — blackout drapes, warm lighting, lockable vault — with a vanity nook, hairdryer hook, and the quiet you came for.
+            </p>
+            <ul class="room-card-amenities">
+              <li>🚺 Exclusively female guests</li>
+              <li>🪞 Vanity nook with mirror &amp; shelf</li>
+              <li>🔒 In-pod gear vault + extra locker</li>
+              <li>🌿 Aromatherapy welcome kit</li>
+            </ul>
+            <a href="#booking" class="room-card-cta">Book This Pod →</a>
+          </div>
+        </article>
+
+        <article class="room-card room-card--wide reveal" data-type="private">
+          <div class="room-card-img">
+            <img src="pictures/bornfire.png" alt="Stone fireplace lounge room at Pathfinder Nest" loading="lazy" />
+            <div class="room-card-badge room-card-badge--private mono">PRIVATE</div>
+          </div>
+          <div class="room-card-body">
+            <div class="room-card-meta mono">PRIVATE ROOM · FROM ₹1,799/NIGHT</div>
+            <h3 class="room-card-title">The Fireplace Sanctuary</h3>
+            <p class="room-card-desc">
+              A private room with a direct view of the stone fireplace lounge. All the soul of the hostel — the warmth, the art, the conversation — with your own key, your own silence when you need it.
+            </p>
+            <ul class="room-card-amenities">
+              <li>🔥 Access to stone fireplace lounge</li>
+              <li>🏔️ Mountain-facing window seat</li>
+              <li>🛁 En-suite warm shower</li>
+              <li>🎸 High-speed fibre Wi-Fi</li>
+            </ul>
+            <a href="#booking" class="room-card-cta">Book This Sanctuary →</a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Pod Blueprint CTA -->
+      <div class="pod-blueprint reveal">
+        <div class="pod-blueprint-inner">
+          <div class="pod-blueprint-text">
+            <span class="mono" style="color:var(--accent-voltage)">BUNK ANXIETY?</span>
+            <h3>Every pod is its own world.</h3>
+            <p>Blackout drapes, acoustic felt lining, warm light, power for all your devices. We designed these so you sleep as well as you would anywhere.</p>
+          </div>
+          <div class="pod-blueprint-specs">
+            <div class="pod-spec">
+              <span class="pod-spec-icon">🛏️</span>
+              <span class="pod-spec-label mono">ORTHOPEDIC 8" FOAM<br>POCKET SPRING MATTRESS</span>
+            </div>
+            <div class="pod-spec">
+              <span class="pod-spec-icon">🔇</span>
+              <span class="pod-spec-label mono">ACOUSTIC FELT<br>SOUND DAMPENING</span>
+            </div>
+            <div class="pod-spec">
+              <span class="pod-spec-icon">🌑</span>
+              <span class="pod-spec-label mono">DOUBLE-WEAVE<br>BLACKOUT DRAPE</span>
+            </div>
+            <div class="pod-spec">
+              <span class="pod-spec-icon">⚡</span>
+              <span class="pod-spec-label mono">2× USB-C 65W PD<br>+ AC UNIVERSAL</span>
+            </div>
+            <div class="pod-spec">
+              <span class="pod-spec-icon">🔒</span>
+              <span class="pod-spec-label mono">70L KEYCARD<br>BACKPACK VAULT</span>
+            </div>
+            <div class="pod-spec">
+              <span class="pod-spec-icon">💡</span>
+              <span class="pod-spec-label mono">DIMMABLE AMBER<br>READING SCONCE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       VIBE — ATMOSPHERE
+  ═══════════════════════════════════════════ -->
+  <section class="vibe" id="vibe">
+    <div class="vibe-bg">
+      <img src="pictures/common_area_1.webp" alt="Common area with prayer flags and murals" loading="lazy" />
+      <div class="vibe-overlay"></div>
+    </div>
+    <div class="container vibe-inner">
+      <div class="vibe-content reveal">
+        <div class="section-label mono" style="color: var(--accent-voltage)">THE VIBE</div>
+        <h2 class="vibe-heading">
+          Prayer flags.<br>
+          Murals that move you.<br>
+          <em>Chai at every hour.</em>
+        </h2>
+        <p class="vibe-desc">
+          Our corridors are hung with Tibetan prayer flags. The walls are alive with murals. Every corner has a story, and every story was written by someone who stayed here.
+        </p>
+      </div>
+
+      <div class="vibe-pillars reveal">
+        <div class="vibe-pillar">
+          <span class="vibe-pillar-icon">🏔️</span>
+          <h4>The Mountain View</h4>
+          <p class="mono" style="font-size: 0.75rem; opacity: 0.7">27°02′N 88°15′E · OPEN 24H</p>
+        </div>
+        <div class="vibe-pillar">
+          <span class="vibe-pillar-icon">🕯️</span>
+          <h4>Fireplace Lounge</h4>
+          <p class="mono" style="font-size: 0.75rem; opacity: 0.7">STONE HEARTH · OPEN EVENINGS</p>
+        </div>
+        <div class="vibe-pillar">
+          <span class="vibe-pillar-icon">🎨</span>
+          <h4>Live Mural Walls</h4>
+          <p class="mono" style="font-size: 0.75rem; opacity: 0.7">GUEST-PAINTED · EVOLVING</p>
+        </div>
+        <div class="vibe-pillar">
+          <span class="vibe-pillar-icon">☕</span>
+          <h4>Real Darjeeling Chai</h4>
+          <p class="mono" style="font-size: 0.75rem; opacity: 0.7">FIRST FLUSH · ON THE HOUSE</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       POLAROID GALLERY — Draggable scrapbook
+  ═══════════════════════════════════════════ -->
+  <section class="gallery-section">
+    <div class="container gallery-header reveal">
+      <div class="section-label mono">LIFE AT THE NEST</div>
+      <h2 class="section-heading">The moments<br>we didn't plan.</h2>
+    </div>
+    <div class="gallery-track-wrap">
+      <div class="gallery-track" id="gallery-track">
+        <div class="polaroid polaroid--tilt-left">
+          <img src="pictures/people.png" alt="Group of travellers outside the hostel" loading="lazy" />
+          <span class="polaroid-caption">Night before the trek ↑</span>
+        </div>
+        <div class="polaroid polaroid--tilt-right">
+          <img src="pictures/dinning.webp" alt="Communal BBQ night around the fire" loading="lazy" />
+          <span class="polaroid-caption">Bonfire BBQ, Nov '24</span>
+        </div>
+        <div class="polaroid polaroid--tilt-left" style="--tilt: -1deg">
+          <img src="pictures/people_2.png" alt="New friends around the dinner table" loading="lazy" />
+          <span class="polaroid-caption">Strangers → Friends</span>
+        </div>
+        <div class="polaroid polaroid--tilt-right" style="--tilt: 2.5deg">
+          <img src="pictures/dorms.webp" alt="Art on the dorm bunk wall" loading="lazy" />
+          <span class="polaroid-caption">Leave your mark here ↓</span>
+        </div>
+        <div class="polaroid polaroid--tilt-left" style="--tilt: -3deg">
+          <img src="pictures/bornfire.png" alt="Stone fireplace and fan art on the wall" loading="lazy" />
+          <span class="polaroid-caption">The fireplace room ♥</span>
+        </div>
+        <div class="polaroid polaroid--tilt-right" style="--tilt: 1.5deg">
+          <img src="pictures/view.jpg" alt="Himalayan mountain panorama" loading="lazy" />
+          <span class="polaroid-caption">Every. Single. Morning.</span>
+        </div>
+      </div>
+    </div>
+    <div class="gallery-hint mono reveal">← Drag to explore →</div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       HAPPENINGS — Weekly Ledger
+  ═══════════════════════════════════════════ -->
+  <section class="happenings" id="happenings">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label mono">HAPPENINGS</div>
+        <h2 class="section-heading">The living<br><em>weekly ledger.</em></h2>
+        <p class="section-desc">
+          We don't just offer a bed. We offer a week that you'll remember.
+        </p>
+      </div>
+
+      <div class="happenings-grid">
+        <div class="happening-card reveal">
+          <div class="happening-day mono">MON</div>
+          <div class="happening-body">
+            <h4 class="happening-title">Communal Thali Night</h4>
+            <p class="happening-desc">The kitchen cooks. Everyone eats together. Strangers become regulars in one meal.</p>
+            <div class="happening-meta mono">COURTYARD TABLE · 7:30 PM · FREE</div>
+          </div>
+          <div class="happening-tag">🍛</div>
+        </div>
+
+        <div class="happening-card reveal">
+          <div class="happening-day mono">WED</div>
+          <div class="happening-body">
+            <h4 class="happening-title">Tea Garden Sunrise Walk</h4>
+            <p class="happening-desc">5 km easy. Through tea gardens and rhododendron forests. Chai at the summit.</p>
+            <div class="happening-meta mono">DEPARTS LOBBY · 6:00 AM · FREE</div>
+          </div>
+          <div class="happening-tag">🌄</div>
+        </div>
+
+        <div class="happening-card reveal">
+          <div class="happening-day mono">THU</div>
+          <div class="happening-body">
+            <h4 class="happening-title">Focus Hours: Greenhouse Cowork</h4>
+            <p class="happening-desc">High-speed fibre. No music. No hustle. Just deep work with a mountain view.</p>
+            <div class="happening-meta mono">COWORK ROOM · 9 AM – 2 PM · FREE</div>
+          </div>
+          <div class="happening-tag">💻</div>
+        </div>
+
+        <div class="happening-card reveal">
+          <div class="happening-day mono">FRI</div>
+          <div class="happening-body">
+            <h4 class="happening-title">Bonfire &amp; Chai Circle</h4>
+            <p class="happening-desc">The fireplace. Local stories. First flush Darjeeling chai. No agenda. Just warmth.</p>
+            <div class="happening-meta mono">FIREPLACE LOUNGE · 8 PM – LATE · FREE</div>
+          </div>
+          <div class="happening-tag">🔥</div>
+        </div>
+
+        <div class="happening-card reveal">
+          <div class="happening-day mono">SAT</div>
+          <div class="happening-body">
+            <h4 class="happening-title">Chowrasta Market Walk</h4>
+            <p class="happening-desc">Flea market, old Tibetan shops, colonial architecture. Led by a local who actually knows the stories.</p>
+            <div class="happening-meta mono">DEPARTS LOBBY · 10:30 AM · FREE</div>
+          </div>
+          <div class="happening-tag">🛍️</div>
+        </div>
+
+        <div class="happening-card reveal">
+          <div class="happening-day mono">SUN</div>
+          <div class="happening-body">
+            <h4 class="happening-title">Mural Sunday</h4>
+            <p class="happening-desc">Paint the dorm walls. Leave your mark. We provide the paint. You bring whatever's in your head.</p>
+            <div class="happening-meta mono">ART DORM · 11 AM – 4 PM · FREE</div>
+          </div>
+          <div class="happening-tag">🎨</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       NEIGHBORHOOD — Field Guide
+  ═══════════════════════════════════════════ -->
+  <section class="neighborhood" id="neighborhood">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label mono">FIELD GUIDE</div>
+        <h2 class="section-heading">The Darjeeling<br><em>insiders know.</em></h2>
+        <p class="section-desc">Not the tourist trail. The real one.</p>
+      </div>
+
+      <div class="field-guide-grid">
+        <div class="field-entry reveal">
+          <div class="field-entry-num mono">01</div>
+          <div class="field-entry-body">
+            <h4>Nathmull's Tea Room</h4>
+            <p>Third generation tea blenders. Buy first flush directly from them. Skip the market markup entirely.</p>
+            <span class="field-tag mono">12 MIN WALK</span>
+          </div>
+        </div>
+        <div class="field-entry reveal">
+          <div class="field-entry-num mono">02</div>
+          <div class="field-entry-body">
+            <h4>Tiger Hill at 4 AM</h4>
+            <p>Yes, 4 AM. The Kanchenjunga sunrise is worth every cold, bleary-eyed, stumbling step up. Hire a Maruti, go.</p>
+            <span class="field-tag mono">45 MIN TAXI</span>
+          </div>
+        </div>
+        <div class="field-entry reveal">
+          <div class="field-entry-num mono">03</div>
+          <div class="field-entry-body">
+            <h4>Dekeva's Momo Corner</h4>
+            <p>No sign outside. You'll smell it first. Best jhol momo in Darjeeling. Cash only. Worth every rupee.</p>
+            <span class="field-tag mono">7 MIN WALK</span>
+          </div>
+        </div>
+        <div class="field-entry reveal">
+          <div class="field-entry-num mono">04</div>
+          <div class="field-entry-body">
+            <h4>Ghoom Monastery</h4>
+            <p>Oldest Tibetan Buddhist monastery in the region. Quiet, early morning visits before the tour buses. Monks in saffron. Mountains behind them.</p>
+            <span class="field-tag mono">25 MIN TAXI</span>
+          </div>
+        </div>
+        <div class="field-entry reveal">
+          <div class="field-entry-num mono">05</div>
+          <div class="field-entry-body">
+            <h4>Chowrasta Promenade</h4>
+            <p>Colonial-era mall with no cars. Street food, old men playing chess, ponies, and the entire Darjeeling sky.</p>
+            <span class="field-tag mono">10 MIN WALK</span>
+          </div>
+        </div>
+        <div class="field-entry reveal">
+          <div class="field-entry-num mono">06</div>
+          <div class="field-entry-body">
+            <h4>Toy Train Platform</h4>
+            <p>UNESCO-listed Darjeeling Himalayan Railway. Even if you don't ride it, stand at the platform at dusk. It's cinema.</p>
+            <span class="field-tag mono">5 MIN WALK</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       GUEST VOICES
+  ═══════════════════════════════════════════ -->
+  <section class="voices">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label mono">GUEST VOICES</div>
+        <h2 class="section-heading">Don't take<br>our word for it.</h2>
+      </div>
+      <div class="voices-grid">
+        <blockquote class="voice-card reveal">
+          <p>"I came for one night. I stayed for eight. The dorm walls made me paint something for the first time since school. I left a piece of myself on that wall."</p>
+          <footer>
+            <strong>Arjun S.</strong>
+            <span class="mono">SOLO TRAVELLER · BENGALURU → DARJEELING</span>
+          </footer>
+        </blockquote>
+        <blockquote class="voice-card reveal">
+          <p>"The hostel staff took us to a tea garden at dawn. No one asked them to. They just... knew we'd want to see it. That's not hospitality. That's something else."</p>
+          <footer>
+            <strong>Clara &amp; Mia</strong>
+            <span class="mono">BACKPACKERS · BERLIN → INDIA</span>
+          </footer>
+        </blockquote>
+        <blockquote class="voice-card reveal">
+          <p>"The bunk pod had acoustic curtains and actual USB-C charging. I slept better here than in my flat in Mumbai."</p>
+          <footer>
+            <strong>Rahul M.</strong>
+            <span class="mono">DIGITAL NOMAD · REMOTE WORKER</span>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       BOOKING SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="booking-section" id="booking">
+    <div class="booking-bg">
+      <img src="pictures/view.jpg" alt="Mountain view" loading="lazy" />
+      <div class="booking-overlay"></div>
+    </div>
+    <div class="container booking-inner reveal">
+      <div class="section-label mono" style="color: var(--accent-voltage)">RESERVE YOUR NEST</div>
+      <h2 class="booking-heading">
+        The mountains<br>are waiting.<br>
+        <em>Your bunk is ready.</em>
+      </h2>
+
+      <form class="booking-form" id="booking-form" novalidate>
+        <div class="booking-form-row">
+          <div class="form-field">
+            <label class="form-label mono" for="checkin">CHECK IN</label>
+            <input class="form-input" type="date" id="checkin" name="checkin" required />
+          </div>
+          <div class="form-field">
+            <label class="form-label mono" for="checkout">CHECK OUT</label>
+            <input class="form-input" type="date" id="checkout" name="checkout" required />
+          </div>
+          <div class="form-field">
+            <label class="form-label mono" for="room-type">ROOM TYPE</label>
+            <select class="form-input form-select" id="room-type" name="room-type">
+              <option value="">Any</option>
+              <option value="art-dorm">The Art Dorm (₹499/night)</option>
+              <option value="quiet-pod">The Quiet Pod (₹599/night)</option>
+              <option value="private">Fireplace Sanctuary (₹1,799/night)</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label mono" for="guests">GUESTS</label>
+            <input class="form-input" type="number" id="guests" name="guests" min="1" max="10" value="1" />
+          </div>
+        </div>
+
+        <div class="booking-form-row booking-form-row--contact">
+          <div class="form-field form-field--wide">
+            <label class="form-label mono" for="name">YOUR NAME</label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="What do we call you?" required />
+          </div>
+          <div class="form-field form-field--wide">
+            <label class="form-label mono" for="email">EMAIL</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="We'll send your confirmation here" required />
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label mono" for="message">ANYTHING WE SHOULD KNOW?</label>
+          <textarea class="form-input form-textarea" id="message" name="message" placeholder="Arriving early? Need a trail recommendation? Tell us anything." rows="3"></textarea>
+        </div>
+
+        <div class="booking-form-footer">
+          <p class="form-note mono">Free cancellation up to 48h before arrival. No hidden fees. We promise.</p>
+          <button class="btn-primary btn-primary--large" type="submit">
+            Secure My Nest ✦
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" aria-hidden="true">
+            <path d="M18 3L3 14v19h10V23h10v10h10V14L18 3z" fill="currentColor"/>
+            <circle cx="18" cy="13" r="3" fill="var(--accent-voltage)"/>
+          </svg>
+          <span>Pathfinder<br><em>Nest</em></span>
+        </div>
+        <p class="footer-tagline">Beds for dreamers.<br>Shared tables for wayfarers.</p>
+        <div class="footer-coords mono">27°02′N 88°15′E · 2,042 M</div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-heading mono">SLEEP</h4>
+        <ul class="footer-links">
+          <li><a href="#sleep">The Art Dorm</a></li>
+          <li><a href="#sleep">The Quiet Pod</a></li>
+          <li><a href="#sleep">Fireplace Sanctuary</a></li>
+          <li><a href="#booking">Check Availability</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-heading mono">EXPLORE</h4>
+        <ul class="footer-links">
+          <li><a href="#happenings">Happenings</a></li>
+          <li><a href="#neighborhood">Field Guide</a></li>
+          <li><a href="#vibe">The Vibe</a></li>
+          <li><a href="#about">Our Story</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-heading mono">FIND US</h4>
+        <address class="footer-address">
+          Pathfinder Nest Hostel<br>
+          Gandhi Road, Darjeeling<br>
+          West Bengal — 734101<br>
+          India
+        </address>
+        <div class="footer-contact">
+          <a href="mailto:hello@pathfindernest.com">hello@pathfindernest.com</a><br>
+          <a href="tel:+919800000000">+91 98000 00000</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span class="mono footer-copy">© 2026 PATHFINDER NEST HOSTEL · ALL RIGHTS RESERVED</span>
+        <div class="footer-bottom-links mono">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Booking Modal / Drawer -->
+  <div class="booking-drawer" id="booking-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Quick booking">
+    <div class="booking-drawer-backdrop" id="booking-drawer-backdrop"></div>
+    <div class="booking-drawer-panel">
+      <button class="booking-drawer-close" id="booking-drawer-close" aria-label="Close booking">✕</button>
+      <div class="booking-drawer-header">
+        <div class="mono" style="color: var(--accent-voltage); font-size: 0.7rem; letter-spacing: 0.1em;">QUICK BOOKING</div>
+        <h3>Find your nest.</h3>
+      </div>
+      <div class="booking-drawer-body">
+        <div class="form-field">
+          <label class="form-label mono">ARRIVAL</label>
+          <input class="form-input" type="date" />
+        </div>
+        <div class="form-field">
+          <label class="form-label mono">DEPARTURE</label>
+          <input class="form-input" type="date" />
+        </div>
+        <div class="form-field">
+          <label class="form-label mono">ROOM TYPE</label>
+          <select class="form-input form-select">
+            <option>Any type</option>
+            <option>The Art Dorm — ₹499/night</option>
+            <option>The Quiet Pod — ₹599/night</option>
+            <option>Fireplace Sanctuary — ₹1,799/night</option>
+          </select>
+        </div>
+        <button class="btn-primary" style="width: 100%; margin-top: 1rem;" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'}); closeBookingDrawer();">
+          See Full Booking Form ✦
+        </button>
+        <p class="form-note mono" style="margin-top: 1rem; text-align: center;">Free cancellation · No hidden fees</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Toast -->
+  <div class="toast" id="toast" role="alert" aria-live="polite">
+    <span class="toast-icon">✦</span>
+    <span class="toast-msg">Your nest is waiting! We'll be in touch within 2 hours.</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
