@@ -1128,6 +1128,7 @@ address {
   padding-block: 1.5rem;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  scroll-behavior: auto;
 }
 
 .gallery-track-wrap::-webkit-scrollbar {
@@ -2108,13 +2109,28 @@ address {
     font-size: 0.9375rem;
   }
 
-  /* GALLERY */
+  /* GALLERY — mobile scroll-snap for smooth card-by-card swiping */
+  .gallery-track-wrap {
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scroll-padding-inline: clamp(1.25rem, 5vw, 3.5rem);
+    cursor: auto;
+  }
+
   .polaroid {
-    width: 240px;
+    width: 72vw;
+    max-width: 300px;
+    scroll-snap-align: center;
   }
 
   .polaroid img {
-    height: 180px;
+    height: 52vw;
+    max-height: 220px;
+  }
+
+  .gallery-track {
+    gap: 1rem;
+    padding-inline: clamp(1.25rem, 5vw, 3.5rem);
   }
 
   /* HAPPENINGS */
@@ -2354,11 +2370,13 @@ address {
 
   /* GALLERY */
   .polaroid {
-    width: 200px;
+    width: 68vw;
+    max-width: 260px;
   }
 
   .polaroid img {
-    height: 150px;
+    height: 50vw;
+    max-height: 190px;
   }
 
   .polaroid-caption {
@@ -2436,11 +2454,13 @@ address {
   }
 
   .polaroid {
-    width: 170px;
+    width: 65vw;
+    max-width: 220px;
   }
 
   .polaroid img {
-    height: 130px;
+    height: 48vw;
+    max-height: 160px;
   }
 
   .room-card-body {
@@ -2476,6 +2496,18 @@ address {
   .polaroid:hover {
     transform: rotate(var(--tilt, 0deg));
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Gallery: native scroll-snap on touch */
+  .gallery-track-wrap {
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scroll-padding-inline: clamp(1.25rem, 5vw, 3.5rem);
+    cursor: auto;
+  }
+
+  .polaroid {
+    scroll-snap-align: center;
   }
 
   .story-img-primary:hover img,

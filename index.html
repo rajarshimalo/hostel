@@ -7,7 +7,9 @@
   <meta name="description" content="A design-led hostel in the Himalayas. Acoustic bunk pods, stone fireplace lounge, prayer flag corridors, and mountain views that stop your breath every single morning." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" /></noscript>
+  <link rel="preload" as="image" href="pictures/view.webp" type="image/webp" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -88,7 +90,7 @@
   ═══════════════════════════════════════════ -->
   <section class="hero" id="hero">
     <div class="hero-bg-wrap">
-      <img src="pictures/view.jpg" alt="Himalayan mountain view from Pathfinder Nest" class="hero-bg-img" />
+      <img src="pictures/view.webp" alt="Himalayan mountain view from Pathfinder Nest" class="hero-bg-img" fetchpriority="high" decoding="async" />
       <div class="hero-bg-overlay"></div>
     </div>
 
@@ -178,10 +180,10 @@
       </div>
       <div class="story-image-stack reveal">
         <div class="story-img-primary">
-          <img src="pictures/people.png" alt="Travellers outside Pathfinder Nest" loading="lazy" />
+          <img src="pictures/people.webp" alt="Travellers outside Pathfinder Nest" loading="lazy" decoding="async" />
         </div>
         <div class="story-img-secondary">
-          <img src="pictures/people_2.png" alt="Guests around the dining table" loading="lazy" />
+          <img src="pictures/people_2.webp" alt="Guests around the dining table" loading="lazy" decoding="async" />
           <div class="story-img-tag mono">COMMUNITY · ALWAYS</div>
         </div>
       </div>
@@ -215,7 +217,7 @@
 
         <article class="room-card reveal" data-type="dorm">
           <div class="room-card-img">
-            <img src="pictures/dorms.webp" alt="Art-covered bunk pod at Pathfinder Nest" loading="lazy" />
+            <img src="pictures/dorms.webp" alt="Art-covered bunk pod at Pathfinder Nest" loading="lazy" decoding="async" />
             <div class="room-card-badge mono">BUNK POD</div>
           </div>
           <div class="room-card-body">
@@ -236,7 +238,7 @@
 
         <article class="room-card reveal" data-type="dorm">
           <div class="room-card-img">
-            <img src="pictures/deom2.jpg" alt="Bunk room with warm pod lighting" loading="lazy" />
+            <img src="pictures/deom2.jpg" alt="Bunk room with warm pod lighting" loading="lazy" decoding="async" />
             <div class="room-card-badge mono">BUNK POD</div>
           </div>
           <div class="room-card-body">
@@ -257,7 +259,7 @@
 
         <article class="room-card reveal" data-type="dorm">
           <div class="room-card-img">
-            <img src="pictures/dorm3.webp" alt="Women's Haven dorm — private curtained bunks" loading="lazy" />
+            <img src="pictures/dorm3.webp" alt="Women's Haven dorm — private curtained bunks" loading="lazy" decoding="async" />
             <div class="room-card-badge mono">BUNK POD</div>
             <div class="room-card-badge-secondary mono">ALL-WOMEN</div>
           </div>
@@ -279,7 +281,7 @@
 
         <article class="room-card room-card--wide reveal" data-type="private">
           <div class="room-card-img">
-            <img src="pictures/bornfire.png" alt="Stone fireplace lounge room at Pathfinder Nest" loading="lazy" />
+            <img src="pictures/bornfire.webp" alt="Stone fireplace lounge room at Pathfinder Nest" loading="lazy" decoding="async" />
             <div class="room-card-badge room-card-badge--private mono">PRIVATE</div>
           </div>
           <div class="room-card-body">
@@ -344,7 +346,7 @@
   ═══════════════════════════════════════════ -->
   <section class="vibe" id="vibe">
     <div class="vibe-bg">
-      <img src="pictures/common_area_1.webp" alt="Common area with prayer flags and murals" loading="lazy" />
+      <img src="pictures/common_area_1.webp" alt="Common area with prayer flags and murals" loading="lazy" decoding="async" />
       <div class="vibe-overlay"></div>
     </div>
     <div class="container vibe-inner">
@@ -396,32 +398,32 @@
     <div class="gallery-track-wrap">
       <div class="gallery-track" id="gallery-track">
         <div class="polaroid polaroid--tilt-left">
-          <img src="pictures/people.png" alt="Group of travellers outside the hostel" loading="lazy" />
+          <img src="pictures/people.webp" alt="Group of travellers outside the hostel" loading="lazy" decoding="async" />
           <span class="polaroid-caption">Night before the trek ↑</span>
         </div>
         <div class="polaroid polaroid--tilt-right">
-          <img src="pictures/dinning.webp" alt="Communal BBQ night around the fire" loading="lazy" />
+          <img src="pictures/dinning.webp" alt="Communal BBQ night around the fire" loading="lazy" decoding="async" />
           <span class="polaroid-caption">Bonfire BBQ, Nov '24</span>
         </div>
         <div class="polaroid polaroid--tilt-left" style="--tilt: -1deg">
-          <img src="pictures/people_2.png" alt="New friends around the dinner table" loading="lazy" />
+          <img src="pictures/people_2.webp" alt="New friends around the dinner table" loading="lazy" decoding="async" />
           <span class="polaroid-caption">Strangers → Friends</span>
         </div>
         <div class="polaroid polaroid--tilt-right" style="--tilt: 2.5deg">
-          <img src="pictures/dorms.webp" alt="Art on the dorm bunk wall" loading="lazy" />
+          <img src="pictures/dorms.webp" alt="Art on the dorm bunk wall" loading="lazy" decoding="async" />
           <span class="polaroid-caption">Leave your mark here ↓</span>
         </div>
         <div class="polaroid polaroid--tilt-left" style="--tilt: -3deg">
-          <img src="pictures/bornfire.png" alt="Stone fireplace and fan art on the wall" loading="lazy" />
+          <img src="pictures/bornfire.webp" alt="Stone fireplace and fan art on the wall" loading="lazy" decoding="async" />
           <span class="polaroid-caption">The fireplace room ♥</span>
         </div>
         <div class="polaroid polaroid--tilt-right" style="--tilt: 1.5deg">
-          <img src="pictures/view.jpg" alt="Himalayan mountain panorama" loading="lazy" />
+          <img src="pictures/view.webp" alt="Himalayan mountain panorama" loading="lazy" decoding="async" />
           <span class="polaroid-caption">Every. Single. Morning.</span>
         </div>
       </div>
     </div>
-    <div class="gallery-hint mono reveal">← Drag to explore →</div>
+    <div class="gallery-hint mono reveal">← Swipe to explore →</div>
   </section>
 
   <!-- ═══════════════════════════════════════════
@@ -605,7 +607,7 @@
   ═══════════════════════════════════════════ -->
   <section class="booking-section" id="booking">
     <div class="booking-bg">
-      <img src="pictures/view.jpg" alt="Mountain view" loading="lazy" />
+      <img src="pictures/view.webp" alt="Mountain view" loading="lazy" decoding="async" />
       <div class="booking-overlay"></div>
     </div>
     <div class="container booking-inner reveal">

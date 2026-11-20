@@ -176,11 +176,22 @@ function initDraggableGallery() {
   const track = document.getElementById('gallery-track');
   if (!wrap || !track) return;
 
+  // Check if on touch device — use CSS scroll-snap instead of JS drag
+  const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+
+  if (isTouchDevice) {
+    // On touch, rely on native CSS scroll-snap (set in CSS)
+    // No JS drag needed — the browser handles smooth, card-by-card snapping
+    return;
+  }
+
+  // Desktop: custom drag with momentum
   let isDragging = false;
   let startX = 0;
   let scrollLeft = 0;
   let velocity = 0;
   let lastX = 0;
+  let lastTime = 0;
   let rafId = null;
 
   wrap.addEventListener('mousedown', (e) => {
@@ -189,6 +200,7 @@ function initDraggableGallery() {
     startX = e.pageX - wrap.offsetLeft;
     scrollLeft = wrap.scrollLeft;
     lastX = e.pageX;
+    lastTime = Date.now();
     velocity = 0;
     cancelAnimationFrame(rafId);
   });
@@ -210,38 +222,20 @@ function initDraggableGallery() {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX - wrap.offsetLeft;
-    const walk = (x - startX) * 1.4;
-    velocity = e.pageX - lastX;
+    const walk = (x - startX) * 1.2;
+    const now = Date.now();
+    const dt = Math.max(now - lastTime, 1);
+    velocity = (e.pageX - lastX) / dt * 16; // normalise to ~60fps
     lastX = e.pageX;
+    lastTime = now;
     wrap.scrollLeft = scrollLeft - walk;
   });
 
-  // Touch support
-  let touchStartX = 0;
-  wrap.addEventListener('touchstart', (e) => {
-    touchStartX = e.touches[0].pageX;
-    scrollLeft = wrap.scrollLeft;
-    velocity = 0;
-    cancelAnimationFrame(rafId);
-  }, { passive: true });
-
-  wrap.addEventListener('touchmove', (e) => {
-    const x = e.touches[0].pageX;
-    const walk = touchStartX - x;
-    wrap.scrollLeft = scrollLeft + walk;
-    velocity = x - (lastX || x);
-    lastX = x;
-  }, { passive: true });
-
-  wrap.addEventListener('touchend', () => {
-    applyMomentum();
-  });
-
   function applyMomentum() {
-    if (Math.abs(velocity) < 1) return;
-    velocity *= 0.92;
+    if (Math.abs(velocity) < 0.5) return;
+    velocity *= 0.95;
     wrap.scrollLeft -= velocity;
-    if (Math.abs(velocity) > 0.5) {
+    if (Math.abs(velocity) > 0.4) {
       rafId = requestAnimationFrame(applyMomentum);
     }
   }
